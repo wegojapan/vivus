@@ -1,0 +1,281 @@
+@charset "utf-8";
+@import "settings";
+
+#header .con_header {
+    .box_header {
+        h1.logo a svg {fill: #000}
+        ul.nav li {
+            a {color: #000;}
+            &:nth-child(1) {
+                a:after {width: 100%;}
+            }
+        }
+    }
+    .btn_menu a span.ic_menu span.line {background: #000;}
+}
+
+#con_page {
+    .con_spi, .con_cica, .con_aste {
+        .box_tit {
+            @include cV(margin, 0 auto 50px, 0 auto, 0 auto 7%);
+            text-align: center;
+            width:100%;
+            em,strong,span {display: block;}
+            em {@include cV(font-size, 45%, 100%)}
+            span {@include cV(font-size, 45%, 60%)}
+        }
+    }
+
+    .con_top {
+        background-color: #FDF3E7;
+        position: relative;
+        .box_top {
+            box-sizing: border-box;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            .box_img {
+                @include cV(width, 50%, 100%, 100%);
+                @include cV(height, 100vh, 85vh, 85vh);
+                background: url("../imgs/img_model_02.jpg") no-repeat center;
+                background-size: cover;
+                img {
+                    display: block;
+                    width: 100%;
+                }
+            }
+            .box_slogan {
+                @include cV(width, 50%, 90%, 100%);
+                box-sizing: border-box;
+                padding: 0 5%;
+                .box_tit {
+                    position: relative;
+                    z-index: 5;
+                    @include cV(width, 560px, 100%);
+                    @include cV(text-align, left, center, center);
+                    @include cV(margin, 0 auto, 0 auto);
+                    .tit_en {
+                        @include cV(font-size, 120%, 110%);
+                    }
+                    .box_txt {
+                        .tit {
+                            display: block;
+                            margin-bottom: 0;
+                            @include fsz-cha(50,45,42);
+                        }
+                        .txt {
+                            @include fsz-cha(18,18,15);
+                            letter-spacing: 0.2em;
+                        }
+                    }
+                }
+            }
+        }
+        @include mq(pc) {
+            height: 100vh;
+            .box_top {
+                flex-direction: row-reverse;
+            }
+        }
+        @include mq(tab_sp) {
+            .box_slogan {
+                display: flex;
+                align-items: center;
+                width: 90%;
+                height: 35vh;
+                position: absolute;
+                bottom: 10%;
+                left: 0;
+                right: 0;
+                margin: auto;
+            }
+        }
+    }
+    
+    .con_spi, .con_aste {
+        @extend %bw;
+        @include cV(padding, 100px 0, 5% 0, 15% 0 20%);
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+        .box_detail {
+            position: relative;
+            width: 100%;
+            @include cV(padding, 0, 5% 0, 5% 0);
+            .box_img {
+                @include cV(width, 25%, 45%, 45%);
+                @include cV(height, 30vw, 70vw, 70vw);
+                background: url("../brand/imgs/img_spi2.jpg") no-repeat center;
+                background-size: cover;
+                border-radius: 500px;
+                overflow: hidden;
+                img {
+                    width: 100%;
+                    display: block;
+                }
+                @include mq(pc) {
+                    position: absolute;
+                    left: 0;
+                    right: 0;
+                    top: 0;
+                    margin: auto;
+                }
+                @include mq(tab_sp) {
+                    margin: auto;
+                }
+            }
+            .box_txt {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-between;
+                dl {
+                    @include cV(width, 30%, 100%, 100%);
+                    @include cV(padding-top, 200px, 10%, 15%);
+                    dt {
+                        @include cV(margin-bottom, 20px, 5%);
+                        @include fsz-cha(18,18,24);
+                        font-weight: 400;
+                    }
+                    &:first-child {
+                        @include cV(padding-top, 50px, 15%);
+                    }
+
+                }
+            }
+            .box_list {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-between;
+                @include cV(margin-top, 220px, 15%, 15%);
+                dl {
+                    @include cV(width, 33%, 100%);
+                    @include cV(padding, 0 5%, 10% 5%);
+                    @include cV(margin-bottom, 0, 3%);
+                    box-sizing: border-box;
+                    text-align: center;
+                    dt {
+                        @include fsz-cha(30,30,24);
+                    }
+                    @include mq(pc_tab) {
+                        border-left: 1px solid #d9d9d9;
+                        &:first-child {
+                            padding-left: 0;
+                            border-left: none;
+                        }
+                    }
+                    @include mq(sp) {
+                        background-color: #f9f9f9;
+                    }
+                }
+            }
+            .box_point {
+                @include cV(margin-top, 150px, 15%);
+                text-align: center;
+                .st {
+                    @include fsz-cha(40,40,32);
+                }
+                .point_list {
+                    li {
+                        background-color: #F8F3EF;
+                        @include cV(margin-bottom, 5px, 3%);
+                        font-weight: 300;
+                        padding: 0.5em 1em;
+                        box-sizing: border-box;
+                        @include fsz-cha(16,16,15);
+                    }
+                }
+                small {
+                    display: block;
+                    font-weight: 300;
+                    text-align: right;
+                }
+            }
+            .box_msg {
+                text-align: center;
+                @include fsz-cha(20,20,18);
+                @include cV(margin-top, 100px, 20%);
+                line-height: 1.7;
+                small{
+                    display: block;
+                    @include cV(margin-top, 30px, 5%);
+                    font-size: 70%;
+                }
+            }
+        }
+    }
+    
+    .con_cica {
+        background-color: #F1F5ED;
+        @include cV(padding, 100px 0, 10% 0, 15% 0 20%);
+        .box_detail {
+            box-sizing: border-box;
+            @extend %bw;
+            @include cV(padding, 100px 0, 5%, 5%);
+            position: relative;
+            width: 100%;
+            .box_img {
+                @include cV(width, 25%, 45%, 45%);
+                @include cV(height, 30vw, 70vw, 70vw);
+                background: url("../brand/imgs/img_cica.jpg") no-repeat center;
+                background-size: cover;
+                border-radius: 500px;
+                overflow: hidden;
+                img {
+                    width: 100%;
+                    display: block;
+                }
+                @include mq(pc) {
+                    position: absolute;
+                    left: 0;
+                    right: 0;
+                    top: 0;
+                    margin: auto;
+                }
+                @include mq(tab_sp) {
+                    margin: auto;
+                }
+            }
+            .box_txt {
+                box-sizing: border-box;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-between;
+                dl {
+                    @include cV(width, 30%, 100%, 100%);
+                    @include cV(padding-top, 100px, 10%, 15%);
+                    dt {
+                        @include fsz-cha(18,18,24);
+                        @include cV(margin-bottom, 20px, 5%);
+                        font-weight: 400;
+                    }
+                    &:first-child {
+                        @include cV(padding-top, 50px, 15%);
+                    }
+                }
+            }
+        }
+    }
+    
+    .con_aste {
+        @include cV(padding, 100px 0 300px, 10% 0 15%, 10% 0 25%);
+        .box_detail {
+            .box_img {
+                background: url("../brand/imgs/img_ast.jpg") no-repeat center;
+                background-size: cover;
+            }
+            .box_txt {
+                dl {
+                    dt {
+                        @include fsz-cha(18,18,24);
+                        line-height: 1.8;
+                        font-weight: 300;
+                    }
+                }
+            }
+        }
+    }
+    
+}

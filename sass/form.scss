@@ -1,0 +1,652 @@
+@charset "utf-8";
+@import "settings";
+
+#header .con_header {
+    .box_header {
+        .logo {
+            svg {transition: fill 0.35s;}
+            &.active {
+                svg { fill:#000; }
+            }
+        }
+    }
+    .btn_menu {
+        &.active {
+            a span.ic_menu span.line {background: #000;}
+        }
+    }
+}
+
+
+#con_page {
+    .con_int {
+        width: 100vw;
+        @include cV(height, 45vh, 35vh, 35vh);
+        background: url("../shop/imgs/img_shop_04.jpg") no-repeat bottom center;
+        background-size: cover;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .tit {
+            @extend %bw;
+            @include fsz-cha(40,38,25);
+            @include cV(padding-top, 0, 5%);
+            text-align: center;
+            position: relative;
+            span {
+                display: block;
+            }
+            small {
+                display: block;
+                font-size: 60%;
+            }
+
+        }
+        &.apply {
+            background: url("../apply/imgs/img_main.jpg") no-repeat bottom center;
+            background-size: cover;
+        }
+        &.store {
+            background: url("../apply/imgs/img_main.jpg") no-repeat bottom center;
+            background-size: cover;
+        }
+    }
+    .con_faq, .con_cont {
+        @include cV(padding, 70px 0 150px, 10% 0 20%);
+        .box_faq, .box_cont {
+            @extend %bw;
+            .tit {
+                text-align: center;
+                @include fsz-cha(24,24,16);
+                span {display: block;}
+            }
+        }
+    }
+    .con_cont {
+        .box_cont {
+            @extend %bw;
+            .tit {
+                @include cV(margin-bottom, 70px, 10%);
+                a {
+                    text-decoration: underline;
+                    color: $pointColor;
+                }
+                .btn_more {
+                    @include cV(margin, 20px auto 0, 3% auto 0);
+                    a {
+                        @include cV(font-size, 70%, 90%);
+                    }
+                } 
+            }
+            .st {
+                border-bottom: 3px solid $pointColor;
+                @include cV(padding-bottom, 20px, 3%);
+                @include font("jp");
+                @include cV(margin-top, 0, 10%);
+                strong {
+                    font-weight: 500;
+                    @include cV(margin-right, 10px, 2%);
+                }
+            }
+            form {
+                @include cV(padding, 30px 0, 5% 0);
+                .form_cate {
+                    display: flex;
+                    align-items: center;
+                    legend {
+                        display: block;
+                        width: 100%;
+                        font-weight: 600;
+                        @include cV(margin-bottom, 20px, 3%);
+                    }
+                    legend + p {margin-left: 0;}
+                    p {
+                        @include cV(margin-left, 50px, 0);
+                        font-weight: 300;
+                        input {margin-right: 0.3em;}
+                    }
+                    @include mq(sp) {
+                        flex-wrap: wrap;
+                        p {
+                            width: 100%;
+                            margin-bottom: 3%;
+                            padding-bottom: 3%;
+                            display: flex;
+                            align-items: center;
+                            border-bottom: 1px dotted #d9d9d9;
+                            input {width: 5%;}
+                            label {width: 95%;}
+                        }
+                    }
+                }
+                .form_info {
+                    .miss_error {
+                        border-bottom: 1px solid red;
+                        &::placeholder {
+                            color: red;
+                            opacity: 1;
+                        }
+                    }
+                    p, div {
+                        @include cV(margin-bottom, 30px, 7%);
+                        display: flex;
+                        flex-wrap: wrap;
+                        label, input, textarea, select {
+                            width: 100%;
+                            box-sizing: border-box;
+                            
+                        }
+                        label {margin-bottom: 0.2em;}
+                        input, textarea {
+                            position: relative;
+                            -webkit-appearance: none;
+                            -webkit-border-radius: 0;
+                            padding: 0.2em 1em;
+                            border: none;
+                            border-bottom: 1px solid #d9d9d9;
+                            font-weight: 300;
+                            &:focus {
+                                border-bottom: 1px solid $pointColor;
+                            }
+                            &::placeholder {
+                                font-size:95%;
+                            }
+                        }
+                        textarea {resize: vertical;}
+                        select {
+                            @include cV(width, 48%, 100%, 100%);
+                            @include cV(margin-top, 10px, 2%);
+                            position: relative;
+                            box-sizing: border-box;
+                            -webkit-appearance: none;
+                            -webkit-border-radius: 0;
+                            padding: 0.5em 1em;
+                            font-weight: 300;
+                            border-color: #d9d9d9;
+                            background: url("../imgs/common/ic_arrow_down.svg") no-repeat 98%;
+                            background-color: #f9f9f9;
+                            @include cV(background-size, 2%, 4%);
+                        }
+                        &.form_double {
+                            display: flex;
+                            flex-wrap: wrap;
+                            justify-content: space-between;
+                            input {
+                                @include cV(margin-bottom, 15px, 3%);
+                            }
+                        }
+                        &.form_address {
+                            display: flex;
+                            flex-wrap: wrap;
+                            justify-content: space-between;
+                            small, input {
+                                @include cV(margin-bottom, 15px, 3%);
+                            }
+                        }
+                    }
+                    .box_choice {
+                        @include cV(margin-bottom, 70px, 10%);
+                        label {display: block;}
+                        .box_item {
+                            display: flex;
+                            flex-wrap: wrap;
+                            @include cV(margin-top, 20px, 3%);
+                            li {
+                                @include cV(width, 18%, 48%);
+                                @include cV(margin, 0 1%, 0);
+                                text-align: center;
+                                border-radius: 10px;
+                                overflow: hidden;
+                                label {
+                                    display: block;
+                                    border: 1px solid #d9d9d9;
+                                    border-radius: 10px;
+                                    @include fsz-cha(13,13,12);
+                                    img {opacity: 0.5;}
+                                    &.active {
+                                        border: 1px solid #e4dfd3;
+                                        background-color: #f7f4ec;
+                                        img {opacity: 1;}
+                                    }
+                                    &:hover {cursor: pointer;}
+                                }
+                                input {opacity: 0;}
+                            }
+                            @include mq(sp) {
+                                justify-content: space-between;
+                            }
+                        }
+                    }
+                    .box_order {
+                        @include cV(margin-bottom, 70px, 10%);
+                        label {display: block;}
+                        .box_item {
+                            display: flex;
+                            flex-wrap: wrap;
+                            @include cV(margin-top, 20px, 3%);
+                            li {
+                                @include cV(width, 18%, 29.3%, 48%);
+                                @include cV(margin, 0 1% 3%, 0 2% 3%, 0 0 7%);
+                                @include cV(padding-bottom, 25px, 5%);
+                                text-align: center;
+                                border-radius: 10px;
+                                overflow: hidden;
+                                background-color: #f9f9f9;
+                                
+                                label {
+                                    .price {
+                                        display: block;
+                                        &:before {
+                                            content: "￥";
+                                        }
+                                    }
+                                }
+                                select {
+                                    @include cV(width, 40%, 60%, 80%);
+                                    @include cV(margin-top, 10px, 3%);
+                                    box-sizing: border-box;
+                                    border: 1px solid #666;
+                                    padding: 0.2em 0.5em;
+                                    background-color: #fff;
+                                    -webkit-appearance: none;
+                                    -webkit-border-radius: 0;
+                                    text-align: center;
+                                }
+                            }
+                            @include mq(sp) {
+                                justify-content: space-between;
+                            }
+                        }
+                        .box_total {
+                            @include cV(margin-top, 50px, 5%);
+                            @include cV(padding, 2% 5%, 5%);
+                            width: 100%;
+                            display: flex;
+                            flex-wrap: wrap;
+                            align-items: center;
+                            justify-content: space-between;;
+                            border: 1px solid #000;
+                            box-sizing: border-box;
+                            .txt {
+                                @include cV(width, 70%, 50%);
+                                @include fsz-cha(20,20,14);
+                                span {font-weight: 500;}
+                                small {display: block;}
+                            }
+                            .box_price {
+                                @include cV(width, 20%, 50%);
+                                text-align: right;
+                                font-weight: 300;
+                                strong {
+                                    @include fsz-cha(20,20,18);
+                                }
+                            }
+                        }
+                        .box_memo {
+                            @include cV(margin-top, 20px, 3%);
+                            font-weight: 300;
+                            display: block;
+                            text-align: left;
+                            padding-left: 1em;
+                            li {
+                                list-style-type: disc;
+                                @include fsz-cha(14,14,13);
+                                line-height: 1.8;
+                                strong {
+                                    color: #D43335;
+                                    font-weight: 500;
+                                }
+                            }
+                        }
+                    }
+                    
+                    .error {
+                        font-weight: 300;
+                        padding-left: 0.5em;
+                        color: red;
+                        @include fsz-cha(13,13,12);
+                    }
+                    
+                }
+                .box_law {
+                    @include cV(margin-top, 60px, 6%);
+                    .box_top {
+                        text-align: left;
+                        width: 100%;
+                        @include cV(margin-bottom, 20px, 3%);
+                        dt {font-weight: 500;}
+                        dd {
+                            @include fsz-cha(16,16,14);
+                            font-weight: 300;
+                        }
+                    }
+                    .box_txt {
+                        box-sizing: border-box;
+                        border: 1px solid #d9d9d9;
+                        @include cV(padding, 2%, 3%);
+                        @include fsz-cha(14,14,13);
+                        overflow-y: scroll;
+                        ul {
+                            box-sizing: border-box;
+                            @include cV(padding-left, 15px, 7%);
+                            li {
+                                @include cV(margin-top, 15px, 2%);
+                                font-weight: 300;
+                                list-style-type: decimal;
+                                h3 {font-weight: 500;}
+                                dl {
+                                    display: flex;
+                                    dt {
+                                        &:after {
+                                            content: ":";
+                                            display: inline-block;
+                                            padding: 0 0.5em;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    .box_agree {
+                        @include cV(margin-top, 20px, 3%);
+                        display: block;
+                        text-align: center;
+                    }
+                }
+                .btn_send {
+                    @include cV(margin, 60px auto 80px, 8% auto 15%);
+                    @include cV(width, 345px, 100%);
+                    input {
+                        box-sizing: border-box;
+                        width: 100%;
+                        background-color: $pointColor;
+                        color: #fff;
+                        padding: 1em 1.5em;
+                        border: none;
+                        -webkit-appearance: none;
+                        -webkit-border-radius: 0;
+                        
+                    }
+                    @include mq(pc) {
+                        input {
+                            &:hover {
+                                background-color: lighten($pointColor, 7%);
+                                cursor: pointer;
+                            }
+                        }
+                    }
+                }
+            }
+            .box_login {
+                max-width: 700px;
+                margin: auto;
+                box-sizing: border-box;
+                @include cV(margin-top, 50px, 5%);
+                label {font-weight: 300;}
+                .st {@include fsz-cha(15,15,13);}
+                .notice {
+                    font-weight: 300;
+                    display: block;
+                    opacity: 0.8;
+                    i {margin-right: 0.5em;}
+                }
+            }
+        }
+        .box_check {
+            dl {
+                display: flex;
+                flex-wrap: wrap;
+                border: 1px solid #d9d9d9;
+                border-bottom: none;
+                @include fsz-cha(16,16,14);
+                dt, dd {
+                    border-bottom: 1px solid #d9d9d9;
+                    @include cV(padding, 10px, 3%);
+                }
+                dt {
+                    box-sizing: border-box;
+                    @include cV(width, 15%, 30%);
+                    background-color: #f9f9f9;
+                    border-right: 1px solid #d9d9d9;
+                    
+                }
+                dd {
+                    box-sizing: border-box;
+                    font-weight: 300;
+                    @include cV(width, 85%, 70%);
+                    .price {
+                        @include cV(margin-top, 25px, 10%);
+                        
+                    }
+                    span {
+                        &:before {
+                            content: "|";
+                            display: inline-block;
+                            padding: 0 0.5em;
+                            color: #d9d9d9;
+                        }
+                        &:first-child {
+                            &:before {
+                                display: none;
+                            }
+                        }
+                    }
+                    ul {
+                        padding-left: 1.2em;
+                        li {
+                            list-style-type: disc;
+                            strong {
+                                @include cV(margin-left, 10px, 3%);
+                            }
+                        }
+                    }
+                }
+            }
+            
+            .box_btn {
+                @include cV(margin-top, 50px, 5%);
+                justify-content: center;
+                display: flex;
+                flex-wrap: wrap;
+                .btn {
+                    @include cV(margin, 0 5px, 0 0 3%);
+                    @include cV(width, 280px, 100%);
+                    &.btn_ok {
+                        a {
+                            color: #fff;
+                            background-color: $pointColor;
+                            border-color: darken($pointColor,10%);
+                        }
+                    }
+                }
+            }
+        }
+        .box_thanks {
+            @extend %bw;
+            @include cV(padding, 3% 5% 0, 5%);
+            box-sizing: border-box;
+            text-align: center;
+            border: 10px solid $pointColor;
+            i {
+                @include cV(font-size, 300%, 250%);
+            }
+            h1 {
+                @include fsz-cha(40,38,24);
+                @include cV(margin-bottom, 30px, 3%);
+            }
+            .txt {
+                line-height: 1.7;
+                @include fsz-cha(18,18,17);
+            }
+            .btn_ok {
+                @include cV(margin, 50px auto, 5% auto);
+                @include cV(width, 250px, 100%);
+                a {
+                    display: block;
+                    padding: 1em 2em;
+                    background-color: $pointColor;
+                    color: #fff;
+                    text-align: center;
+                }
+            }
+        }
+        &.check {
+            @include cV(padding, 150px 0 100px, 25% 0 15%);
+            .box_cont .tit {
+                span {@include fsz-cha(22,22,24);}
+                small {@include fsz-cha(16,16,16);}
+            }
+        }
+        &.thanks {
+            .con_cont {padding: 0;}
+        }
+    }
+    
+    .con_tab {@include cV(margin-top, 80px, 10%);
+        #tab {
+            width: 100%;
+            margin: 0;
+            ul {
+                @include cV(display, flex, flex);
+                background-color: #fff;
+                @include cV(padding-bottom, 30px, 3%);
+                @include cV(margin-top, 20px, 7%);
+                li {
+                    box-sizing: border-box;
+                    color: #858585;
+                    text-decoration: none;
+                    display: inline-block;
+                    position: relative;
+                    text-align: center;
+                    background-color: #f9f9f9;
+                    border: 1px solid #d9d9d9;
+                    width: 50%;
+                    a {
+                        @include cV(padding, 20px, 7%);
+                        display: block;
+                        strong {font-weight: normal;}
+                    }
+                    @include mq(pc) {
+                        a {
+                            display: block;
+                            &:hover {
+                                color: #000;
+                                cursor: pointer;
+                            }
+                        }
+                    }
+                }
+                @include mq(pc_tab) {
+                    width: 100%;
+                    justify-content: center;
+                    align-items: center;
+                    li {
+                        border-left: none;
+                        &:first-child {border-left: 1px solid #d9d9d9;}
+                        &.active {
+                            font-weight: 500;
+                            color: #000;
+                            &:after {
+                                content: "";
+                                display: inline-block;
+                                width: 100%;
+                                height: 3px;
+                                position: absolute;
+                                bottom: 0;
+                                left: 0;
+                                background-color: $pointColor;
+                            }
+                        }
+                    }
+                }
+                @include mq(tab_sp) {
+                    flex-wrap: wrap;
+                    overflow: auto;
+                    white-space: nowrap;
+                    li {
+                        box-sizing: border-box;
+                        display: inline-block;
+                        border-left: none;
+                        small, strong {
+                            display: block;
+                            line-height: 1.7em;
+                        }
+                        &:nth-child(odd) {
+                            border-left: 1px solid #d9d9d9;
+                        }
+                        &:nth-child(4),&:nth-child(5) {
+                            border-bottom: 1px solid #d9d9d9;
+                        }
+                        &.active {
+                            font-weight: 600;
+                            background-color: $pointColor;
+                            a {color: #fff;}
+                        }
+                    }
+                }
+            }
+        }
+        #panel {
+            >li {
+                display: none;
+                .box_txt {
+                    @include cV(margin-top, 70px, 15%);
+                    h3 {font-weight: 500;}
+                    .box_info {
+                        @include cV(margin-top, 20px, 5%);
+                        font-weight: 300;
+                        box-sizing: border-box;
+                        border-bottom: 1px solid #000;
+                        dt {
+                            border-top: 1px solid #000;
+                            @include cV(padding, 1.5em 0, 1em 1em 1em 0);
+                            font-weight: 300;
+                            position: relative;
+                            display: flex;
+                            &:before {
+                                content: "Q";
+                                display: inline-block;
+                                margin-right: 10px;
+                                font-weight: 500;
+                                @include font("en");
+                            }
+                            &:after {
+                                content: '\002B';
+                                float: right;
+                                position: absolute;
+                                right: 0;
+                            }
+                            &.active {
+                                border-bottom: 1px solid #000;
+                                &:after {content: '\2212';}
+                            }
+                            &:hover { cursor: pointer;}
+                        }
+                        dd {
+                            display: none;
+                            color: #333;
+                            @include cV(padding, 30px 30px 50px, 10% 3%);
+                            &:first-child {
+                                border-top: none;
+                            }
+                        }
+                    }
+                    &:first-child {
+                        @include cV(margin-top, 30px, 7%);
+                    }
+                }
+                &:first-child { display: list-item; }
+            }
+        }
+    }
+    .box_memo {
+        @extend %bw;
+        text-align: center;
+        @include cV(margin-top, 100px, 15%);
+        .btn_more {
+            @include cV(margin, 10px auto, 5% auto);
+        }
+    }
+    
+}
+
